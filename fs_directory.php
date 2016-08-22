@@ -412,6 +412,7 @@
 				$cacheable = 0;
 				$username  = $directory[$i]['username'];
 				$mailbox   = empty ( $directory[$i]['mailbox'] ) ? $username : $directory[$i]['mailbox'];
+				$number_alias  = empty ( $directory[$i]['number_alias'] ) ? $username : $directory[$i]['number_alias'];
 				$this->xmlw->startElement( 'user' );
 				$this->xmlw->writeAttribute( 'id', $username );
 				if ( array_key_exists( 'cache', $directory[$i] ) ) {
@@ -419,6 +420,7 @@
 				}
 				$this->xmlw->writeAttribute( 'cacheable', $cacheable );
 				$this->xmlw->writeAttribute( 'mailbox', $mailbox );
+				$this->xmlw->writeAttribute( 'number-alias', $number_alias );
 
 				$this->write_params( $directory[$i]['id'] );
 				$this->write_variables( $directory[$i]['id'] );
