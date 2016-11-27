@@ -50,7 +50,7 @@ class fs_configuration extends fs_curl {
     function is_mod_enabled($mod_name) {
         $query = sprintf('%s %s'
         , "SELECT * FROM post_load_modules_conf"
-        , "WHERE module_name='$mod_name' AND load_module=1"
+        , "WHERE module_name='$mod_name' AND load_module=true"
         );
         $res = $this -> db -> query($query);
         if ($this->db->errorCode() !== FS_SQL_SUCCESS) {
