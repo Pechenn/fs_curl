@@ -152,6 +152,9 @@ class sofia_conf extends fs_configuration {
             $this -> xmlw -> startElement('domain');
             $this -> xmlw -> writeAttribute('name', $domain_array[$i]['domain_name']);
             $this -> xmlw -> writeAttribute(
+            'alias', ($domain_array[$i]['alias'] == 1 ? 'true' : 'false')
+            );
+            $this -> xmlw -> writeAttribute(
             'parse', ($domain_array[$i]['parse'] == 1 ? 'true' : 'false')
             );
             $this -> xmlw -> endElement();
